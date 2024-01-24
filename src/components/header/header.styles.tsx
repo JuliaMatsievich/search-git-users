@@ -5,6 +5,7 @@ import { centralContainer } from '../../styles/commonStyles.styles';
 export const HeaderHeader = styled.header`
   background-color: ${$mainColor};
   width: 100%;
+  margin-bottom: 30px;
 `;
 
 export const HeaderContainer = styled.div`
