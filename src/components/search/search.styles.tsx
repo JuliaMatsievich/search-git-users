@@ -1,10 +1,18 @@
 import styled from 'styled-components';
-import { centralContainer } from '../../styles/commonStyles.styles';
+import {
+  buttonColor,
+  centralContainer,
+} from '../../styles/commonStyles.styles';
 import { $mainColor } from '../../styles/variables';
 
 export const SearchContainer = styled.div`
   ${centralContainer}
   width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 `;
 
 export const SearchInput = styled.input`
@@ -24,4 +32,8 @@ export const SearchInput = styled.input`
     outline: none;
     border: 2px solid ${$mainColor};
   }
+`;
+
+export const Button = styled.button`
+  ${buttonColor}
 `;

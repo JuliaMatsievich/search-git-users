@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 @font-face {
 	font-family: 'Roboto';
   src: local('Roboto'),
-    url('./fonts/Roboto/Roboto-Regular.ttf') format('ttf');
+    url('/fonts/Roboto/Roboto-Regular.ttf') format('ttf');
   font-weight: 400;
 }
 
@@ -35,12 +35,6 @@ body {
 
 button {
 	cursor: pointer
-}
-
-textarea {
-  font-family: 'Roboto';
-  font-weight: 400;
-  font-size: 14px;
 }
 `;
 

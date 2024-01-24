@@ -1,22 +1,29 @@
 import * as S from './search.styles';
 import * as CS from '../../styles/commonStyles.styles';
-import { useRef } from 'react';
 
 interface ISearchProps {
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  searchUser: string;
+  setSearchUser: React.Dispatch<React.SetStateAction<string>>;
+  setQuerySearh: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const Search: React.FC<ISearchProps> = (props) => {
-  const { value, setValue } = props;
+  const { searchUser, setSearchUser, setQuerySearh } = props;
 
-  const inputRef = useRef(null);
+  const handleClick = () => {
+    setQuerySearh(searchUser);
+  };
 
   return (
     <>
       <CS.Container>
         <S.SearchContainer>
-          <S.SearchInput ref={inputRef} placeholder="Поиск" />
+          <S.SearchInput
+            value={searchUser}
+            onChange={(e) => setSearchUser(e.target.value)}
+            placeholder="Поиск"
+          />
+          <S.Button onClick={handleClick}>Найти</S.Button>
         </S.SearchContainer>
       </CS.Container>
     </>

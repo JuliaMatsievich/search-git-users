@@ -7,32 +7,43 @@ import {
 } from './services/searchUsersApi';
 import * as S from './styles/globalStyles.styles';
 import { ISearchUsers, IUser } from './interface';
+import { UserList } from './userList/userList';
 
 const App = () => {
   // const { data? users } = useGetUsersQuery(null);
   const [getUsers, { isLoading }] = useLazyGetUsersQuery();
-  const [value, setValue] = useState<string>('');
-  const [searchUsers, setsearchUsers] = useState<IUser[]>([]);
+  const [searchUser, setSearchUser] = useState<string>('');
+  const [users, setUsers] = useState<IUser[] | null>([]);
+  const [querySearch, setQuerySearh] = useState('');
 
   // console.log('data', data);
 
   useEffect(() => {
-    try {
-      getUsers('ma')
-        .unwrap()
-        .then((data: ISearchUsers) => {
-          console.log('data', data);
-        });
-    } catch (error) {
-      console.log(error);
+    if (!querySearch) {
+      return;
+    } else {
+      try {
+        getUsers(querySearch)
+          .unwrap()
+          .then((data: ISearchUsers) => {
+            setUsers(data.items);
+          });
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }, []);
+  }, [querySearch]);
 
   return (
     <>
       <S.GlobalStyle />
       <Header />
-      <Search value={value} setValue={setValue} />
+      <Search
+        searchUser={searchUser}
+        setQuerySearh={setQuerySearh}
+        setSearchUser={setSearchUser}
+      />
+      {querySearch ? <UserList users={users} /> : null}
     </>
   );
 };
