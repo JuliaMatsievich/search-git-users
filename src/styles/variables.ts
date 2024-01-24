@@ -12,7 +12,7 @@ export const $phoneWidth = `${PHONE_WIDTH}px`;
 
 export const $mainFont = 'Roboto, sans-serif';
 export const $mainFontColor = '#000';
-export const $buttonColor = '#009ee4';
-export const $buttonColorHover = '#0080c1';
+export const $buttonColor = '#3197ad';
+export const $buttonColorHover = '#02819e';
 export const $buttonColorDisabled = '#D9D9D9';
-export const $mainColor = '#009ee4';
+export const $mainColor = '#3197ad';
