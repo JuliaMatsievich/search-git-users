@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { $greyColor } from '../../styles/variables';
+import {
+  $greyColor,
+  $mediumWidth,
+  $phoneWidth,
+  $tabletWidth,
+} from '../../styles/variables';
 
 export const userItemLi = styled.li`
   border: 1px solid ${$greyColor};
@@ -15,5 +20,13 @@ export const userItemLi = styled.li`
   &:hover span {
     visibility: visible;
     opacity: 1;
+  }
+
+  @media (max-width: ${$mediumWidth}) {
+    width: 75%;
+  }
+
+  @media (max-width: ${$tabletWidth}) {
+    width: 100%;
   }
 `;

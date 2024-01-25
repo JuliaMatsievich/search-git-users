@@ -8,22 +8,10 @@ export const DetailsUserContainer = styled.div`
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   grid-column-gap: 20px;
-
-  @media (max-width: ${$tabletWidth}) {
-  }
-
-  @media (max-width: ${$phoneWidth}) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
-  }
 `;
 
 export const DetailsUserContent = styled.div`
   grid-area: 1 / 2 / 2 / 3;
-  @media (max-width: ${$phoneWidth}) {
-    grid-area: 1 / 1;
-    justify-self: flex-start;
-  }
 `;
 
 export const DetailsUserFoto = styled.div`
@@ -34,11 +22,6 @@ export const DetailsUserFoto = styled.div`
   margin-bottom: 10px;
   grid-area: 1 / 1 / 3 / 2;
   position: relative;
-
-  @media (max-width: ${$phoneWidth}) {
-    grid-area: 2 / 1;
-    margin-bottom: 30px;
-  }
 `;
 export const DetailsUserImg = styled.img`
   ${img}
