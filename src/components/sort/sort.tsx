@@ -19,8 +19,12 @@ export const Sort: React.FC = () => {
     return sortType ? options.find((st) => st.value === sortType) : undefined;
   };
 
-  const onChange = (newValue: OnChangeValue<IOption, boolean>) => {
-    dispatch(chooseSortType({ sortType: (newValue as IOption).value }));
+  const onChange = (newValue: OnChangeValue<IOption, boolean> | null) => {
+    if (newValue === null) {
+      dispatch(chooseSortType({ sortType: '' }));
+    } else {
+      dispatch(chooseSortType({ sortType: (newValue as IOption).value }));
+    }
   };
 
   return (
@@ -34,6 +38,15 @@ export const Sort: React.FC = () => {
               options={options}
               value={getValue()}
               placeholder="Выберите"
+              theme={(theme) => ({
+                ...theme,
+                colors: {
+                  ...theme.colors,
+                  primary25: '#3196ad2f',
+                  primary: '#3197ad',
+                },
+              })}
+              isClearable
             />
           </S.SortSelectContainer>
         </S.SortContainer>
