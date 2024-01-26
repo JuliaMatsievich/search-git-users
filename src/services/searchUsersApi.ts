@@ -17,10 +17,6 @@ export const searchUsersApi = createApi({
         method: 'GET',
         header: { 'X-GitHub-Api-Version': '2022-11-28' },
       }),
-      transformResponse: (responseData: ISearchUsers, meta) => {
-        console.log(meta?.response?.headers.get('Link'));
-        return responseData;
-      },
     }),
   }),
 });

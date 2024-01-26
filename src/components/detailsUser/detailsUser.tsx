@@ -8,7 +8,6 @@ interface IDetailsUserProps {
 
 export const DetailsUser: React.FC<IDetailsUserProps> = (props) => {
   const { user } = props;
-  console.log('user', user);
 
   return (
     <>
