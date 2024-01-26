@@ -26,8 +26,11 @@ export const paginationSlice = createSlice({
         state.pages = getArrayOfNumbers(Math.ceil(totalCount / PER_PAGE));
       }
     },
+    setCurrentPage(state, action: PayloadAction<{ currentPage: number }>) {
+      state.currentPage = action.payload.currentPage;
+    },
   },
 });
 
-export const { setPages } = paginationSlice.actions;
+export const { setPages, setCurrentPage } = paginationSlice.actions;
 export const paginationReducer = paginationSlice.reducer;

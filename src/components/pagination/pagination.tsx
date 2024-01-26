@@ -1,15 +1,16 @@
 import * as S from './pagination.styles';
 import * as CS from '../../styles/commonStyles.styles';
-import { useState } from 'react';
 import { useAppSelector } from '../../hooks/useAppSelector';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { setCurrentPage } from '../../store/slices/paginationSlice';
 
 export const Pagination: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
   const pages = useAppSelector((state) => state.pagination.pages);
+  const currentPage = useAppSelector((state) => state.pagination.currentPage);
+  const dispatch = useAppDispatch();
 
   const handleClickPage = (page: number) => {
-    console.log('page', page);
-    setCurrentPage(page);
+    dispatch(setCurrentPage({ currentPage: page }));
   };
 
   return (

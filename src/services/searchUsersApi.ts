@@ -8,9 +8,12 @@ export const searchUsersApi = createApi({
     baseUrl: BASE_URL,
   }),
   endpoints: (builder) => ({
-    getUsers: builder.query<ISearchUsers, { name: string; order: string }>({
+    getUsers: builder.query<
+      ISearchUsers,
+      { name: string; order: string; page: number }
+    >({
       query: (arg) => ({
-        url: `search/users?q=${arg.name}&sort=repositories&order=${arg.order}&per_page=${PER_PAGE}`,
+        url: `search/users?q=${arg.name}&sort=repositories&order=${arg.order}&per_page=${PER_PAGE}&page=${arg.page}`,
         method: 'GET',
         header: { 'X-GitHub-Api-Version': '2022-11-28' },
       }),
