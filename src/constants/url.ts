@@ -1,1 +1,2 @@
-export const SERVER_URL = 'http://localhost:8090';
+export const BASE_URL = 'https://api.github.com/';
+export const PER_PAGE = 30;
