@@ -1,29 +1,25 @@
 import { useEffect, useState } from 'react';
 import { Header } from './components/header/header';
 import { Search } from './components/search/search';
-import {
-  useGetUsersQuery,
-  useLazyGetUsersQuery,
-} from './services/searchUsersApi';
+import { useLazyGetUsersQuery } from './services/searchUsersApi';
 import * as S from './styles/globalStyles.styles';
 import { ISearchUsers, IUser } from './interface';
 import { UserList } from './userList/userList';
+import { useAppSelector } from './hooks/useAppSelector';
 
 const App = () => {
-  // const { data? users } = useGetUsersQuery(null);
   const [getUsers, { isLoading }] = useLazyGetUsersQuery();
   const [searchUser, setSearchUser] = useState<string>('');
   const [users, setUsers] = useState<IUser[] | null>([]);
   const [querySearch, setQuerySearh] = useState('');
-
-  // console.log('data', data);
+  const sortType = useAppSelector((state) => state.sort.sortType);
 
   useEffect(() => {
     if (!querySearch) {
       return;
     } else {
       try {
-        getUsers(querySearch)
+        getUsers({ name: querySearch, order: sortType })
           .unwrap()
           .then((data: ISearchUsers) => {
             setUsers(data.items);
@@ -32,7 +28,7 @@ const App = () => {
         console.log(error);
       }
     }
-  }, [querySearch]);
+  }, [querySearch, sortType]);
 
   return (
     <>

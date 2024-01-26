@@ -1,32 +1,27 @@
 import * as S from './sort.styles';
 import * as CS from '../../styles/commonStyles.styles';
 import Select, { OnChangeValue, PropsValue } from 'react-select';
-import { useEffect, useState } from 'react';
 import { IOption } from '../../interface';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { chooseSortType } from '../../store/slices/sortSlice';
 
 const options: IOption[] = [
   { value: 'desc', label: 'По возрастанию' },
   { value: 'asc', label: 'По убыванию' },
 ];
 
-interface ISortProps {}
-
-export const Sort: React.FC<ISortProps> = (props) => {
-  const {} = props;
-
-  const [sortType, setSortType] = useState<string>('');
+export const Sort: React.FC = () => {
+  const sortType = useAppSelector((state) => state.sort.sortType);
+  const dispatch = useAppDispatch();
 
   const getValue = (): PropsValue<IOption> | undefined => {
     return sortType ? options.find((st) => st.value === sortType) : undefined;
   };
 
   const onChange = (newValue: OnChangeValue<IOption, boolean>) => {
-    setSortType((newValue as IOption).value);
+    dispatch(chooseSortType({ sortType: (newValue as IOption).value }));
   };
-
-  useEffect(() => {
-    console.log('sortType', sortType);
-  }, [sortType]);
 
   return (
     <>
