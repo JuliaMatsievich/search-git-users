@@ -8,6 +8,7 @@ import { UserList } from './components/userList/userList';
 import { useAppSelector } from './hooks/useAppSelector';
 import { useAppDispatch } from './hooks/useAppDispatch';
 import { setPages } from './store/slices/paginationSlice';
+import { Loader } from './components/loader/loader';
 
 const App = () => {
   const [getUsers, { isLoading }] = useLazyGetUsersQuery();
@@ -44,7 +45,8 @@ const App = () => {
         setQuerySearh={setQuerySearh}
         setSearchUser={setSearchUser}
       />
-      {querySearch ? <UserList users={users} /> : null}
+      {isLoading ? <Loader /> : querySearch ? <UserList users={users} /> : null}
+      {/* {querySearch ? <UserList users={users} /> : null} */}
     </>
   );
 };
