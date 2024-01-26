@@ -25,3 +25,8 @@ export interface IUser {
   events_url: string;
   site_admin: string;
 }
+
+export interface IOption {
+  value: string;
+  label: string;
+}

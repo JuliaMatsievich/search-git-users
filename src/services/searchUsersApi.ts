@@ -9,7 +9,7 @@ export const searchUsersApi = createApi({
   endpoints: (builder) => ({
     getUsers: builder.query<ISearchUsers, string>({
       query: (name) => ({
-        url: `search/users?q=${name}`,
+        url: `search/users?q=${name}&sort=repositories&order=asc`,
         method: 'GET',
         header: { 'X-GitHub-Api-Version': '2022-11-28' },
       }),
