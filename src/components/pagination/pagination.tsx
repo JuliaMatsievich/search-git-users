@@ -6,10 +6,10 @@ import { useAppSelector } from '../../hooks/useAppSelector';
 export const Pagination: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const pages = useAppSelector((state) => state.pagination.pages);
-  console.log('pages', pages);
 
-  const handleClickPage = () => {
-    console.log('page');
+  const handleClickPage = (page: number) => {
+    console.log('page', page);
+    setCurrentPage(page);
   };
 
   return (
@@ -17,7 +17,11 @@ export const Pagination: React.FC = () => {
       <CS.Container>
         <S.PaginationContainer>
           {pages.map((page, index) => (
-            <S.PaginationItem key={index} onClick={handleClickPage}>
+            <S.PaginationItem
+              $isActive={currentPage === page}
+              key={index}
+              onClick={() => handleClickPage(page)}
+            >
               {page}
             </S.PaginationItem>
           ))}

@@ -11,7 +11,9 @@ export const PaginationContainer = styled.div`
   margin-top: 20px;
 `;
 
-export const PaginationItem = styled.div`
+export const PaginationItem = styled.div<{ $isActive: boolean }>`
+  color: ${({ $isActive }) => ($isActive ? '#fff' : '#000')};
+  background-color: ${({ $isActive }) => ($isActive ? '#3197ad' : '#fff')};
   border: 1px solid ${$mainColor};
   border-radius: 5px;
   display: flex;
@@ -24,10 +26,6 @@ export const PaginationItem = styled.div`
   transition: all 0.3s ease 0s;
 
   &:hover {
-    background-color: #3196ad2f;
-  }
-
-  &:active {
     background-color: #3197ad;
     color: #fff;
   }
