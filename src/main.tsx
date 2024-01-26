@@ -5,13 +5,7 @@ import App from './App';
 import './index.css';
 import { store } from './store/store';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-  },
-]);
+import { NotFound } from './pages/notfound';
 
 const container = document.getElementById('root');
 
@@ -21,7 +15,7 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <RouterProvider router={router} />
+        <App />
       </Provider>
     </React.StrictMode>,
   );
