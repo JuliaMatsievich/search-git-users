@@ -1,10 +1,5 @@
 import styled from 'styled-components';
-import {
-  $greyColor,
-  $mediumWidth,
-  $phoneWidth,
-  $tabletWidth,
-} from '../../styles/variables';
+import { $greyColor, $mediumWidth, $tabletWidth } from '../../styles/variables';
 
 export const userItemLi = styled.li`
   border: 1px solid ${$greyColor};

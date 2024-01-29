@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { $phoneWidth, $tabletWidth } from '../../styles/variables';
 import { img } from '../../styles/commonStyles.styles';
 
 export const DetailsUserContainer = styled.div`
@@ -61,14 +60,3 @@ export const DetailsUserGitAccountLink = styled.a`
     text-decoration: underline;
   }
 `;
-
-// export const SellerInfoCity = styled.p`
-//   color: ${$greyColor};
-//   font-size: 16px;
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 200%; /* 32px */
-// `;
-// export const SellerInfoSellsFrom = styled(SellerInfoCity)`
-//   margin-bottom: 30px;
-// `;

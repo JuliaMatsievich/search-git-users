@@ -53,42 +53,6 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-// export const title = css`
-//   color: #000;
-//   font-size: 40px;
-//   font-style: normal;
-//   font-weight: 500;
-//   line-height: 220%; /* 88px */
-//   @media (max-width: ${$tabletWidth}) {
-//     font-size: 30px;
-//     margin-bottom: 8px;
-//   }
-//   @media (max-width: ${$phoneWidth}) {
-//     font-size: 24px;
-//     font-style: normal;
-//     font-weight: 500;
-//     line-height: 120%; /* 28.8px */
-//   }
-// `;
-
-// export const subtitle = css`
-//   font-size: 32px;
-//   font-style: normal;
-//   font-weight: 500;
-//   line-height: 220%; /* 70.4px */
-//   padding-bottom: 20px;
-
-//   @media (max-width: ${$phoneWidth}) {
-//     font-size: 18px;
-//     line-height: 100%; /* 18px */
-//   }
-// `;
-
-// export const link = css`
-//   text-decoration: none;
-//   cursor: pointer;
-// `;
-
 export const img = css`
   position: absolute;
   width: 100%;
