@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
       <S.HeaderHeader>
         <CS.Container>
           <S.HeaderContainer>
-            <S.Img src="/img/github-logo.png"></S.Img>
+            <S.Img src="/search-git-users/img/github-logo.png"></S.Img>
             <S.Title>GitHub Search Users</S.Title>
           </S.HeaderContainer>
         </CS.Container>
