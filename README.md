@@ -1,27 +1,45 @@
-# vite-template-redux
+# Проект Search Git Users 
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+Аттестационный проект на курсе 'Веб-разработчик' в школе Skypro
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
+## Описание проекта
+
+Проект поиска пользователей на сайте GitHub
+
+На сайте реализовано: 
+    1. Поиск по логину
+    2. Сортировка по количеству репозиториев (возрастанию/убыванию)
+    3. Есть пагинация
+    4. При клике на элемент открываются подробности
+
+## Использованные технологии
+
+- Typescript
+- React
+- Styled Components
+- RTK Query
+- React Router
+- React-Select
+- Redux Toolkit
+
+В качестве сборщика: Vite
+
+## Как запустить проект
+
+1. Клонировать репозиторий
+
+```
+git clone https://github.com/JuliaMatsievich/search-git-users
 ```
 
-## Goals
+2.Установить необходимые зависимости
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+```
+npm install
+```
 
-## Scripts
+3. Запустить приложение с помощью следующей команды
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
-
-## Inspiration
-
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+```
+npm run start
+```
