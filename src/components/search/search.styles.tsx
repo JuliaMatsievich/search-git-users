@@ -26,7 +26,7 @@ export const SearchInput = styled.input`
   padding-left: 20px;
 
   &::placeholder {
-    font-family: 'Roboto';
+    font-family: Roboto, sans-serif;
   }
   &:focus {
     outline: none;
