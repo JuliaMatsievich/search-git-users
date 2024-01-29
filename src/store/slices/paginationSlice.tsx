@@ -8,7 +8,7 @@ interface IPaginationState {
   currentPage: number;
 }
 
-const initialState: IPaginationState = {
+export const initialState: IPaginationState = {
   totalCount: 0,
   pages: [1],
   currentPage: 1,

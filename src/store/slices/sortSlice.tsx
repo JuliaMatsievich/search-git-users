@@ -4,7 +4,7 @@ interface ISortState {
   sortType: string;
 }
 
-const initialState: ISortState = {
+export const initialState: ISortState = {
   sortType: '',
 };
 
