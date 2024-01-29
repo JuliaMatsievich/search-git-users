@@ -45,6 +45,7 @@ export const MainPage = () => {
           searchUser={searchUser}
           setQuerySearh={setQuerySearh}
           setSearchUser={setSearchUser}
+          isLoading={isLoading}
         />
         {isLoading && <Loader />}
         {isError && (
