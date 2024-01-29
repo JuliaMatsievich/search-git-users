@@ -12,15 +12,13 @@ import * as CS from '../../styles/commonStyles.styles';
 import * as S from './mainPgae.styles';
 
 export const MainPage = () => {
-  const [getUsers, { isLoading }] = useLazyGetUsersQuery();
+  const [getUsers, { isLoading, isError }] = useLazyGetUsersQuery();
   const [searchUser, setSearchUser] = useState<string>('');
   const [users, setUsers] = useState<IUser[]>([]);
   const [querySearch, setQuerySearh] = useState<string>('');
   const sortType = useAppSelector((state) => state.sort.sortType);
   const dispatch = useAppDispatch();
   const currentPage = useAppSelector((state) => state.pagination.currentPage);
-  console.log('querySearch', querySearch.length);
-  console.log('users', users.length);
 
   useEffect(() => {
     if (!querySearch) {
@@ -49,13 +47,18 @@ export const MainPage = () => {
           setSearchUser={setSearchUser}
         />
         {isLoading && <Loader />}
-        {users?.length === 0 &&
-        querySearch.length === 0 ? null : users?.length === 0 &&
-          querySearch.length > 0 ? (
+        {isError && (
+          <S.ErrorContainer>
+            Что-то пошло не так, попробуйте позже
+          </S.ErrorContainer>
+        )}
+        {users?.length === 0 && querySearch.length === 0 && !Error && null}
+        {users?.length === 0 && querySearch.length > 0 && !isError && (
           <S.SearchNotFound>
             Ничего не найдено. Попробуйте поменять параметры поиска
           </S.SearchNotFound>
-        ) : (
+        )}
+        {users?.length !== 0 && querySearch.length > 0 && !isError && (
           <UserList users={users} />
         )}
       </CS.Container>
