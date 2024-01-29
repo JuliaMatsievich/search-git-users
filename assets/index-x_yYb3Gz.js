@@ -192,7 +192,7 @@ button {
   padding-left: 20px;
 
   &::placeholder {
-    font-family: 'Roboto';
+    font-family: Roboto, sans-serif;
   }
   &:focus {
     outline: none;
@@ -384,5 +384,5 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 `,sR=K.p`
   font-size: 60px;
   color: ${Gr};
-`,lR=()=>L.jsxs(iR,{children:[L.jsx(oR,{children:"Ошибка 404"}),L.jsx(sR,{children:"Упс, кажется такой страницы не существует....."})]}),uR=()=>L.jsxs(TC,{children:[L.jsx(ja,{path:"/",element:L.jsx(rR,{})}),L.jsx(ja,{path:"/*",element:L.jsx(lR,{})})]}),aR=()=>L.jsxs(L.Fragment,{children:[L.jsx(Gw,{}),L.jsx(uR,{})]}),cR=Rx({reducer:{sort:VP,pagination:KP,[us.reducerPath]:us.reducer},middleware:e=>e().concat(us.middleware)}),gh=document.getElementById("root");if(gh)$v(gh).render(L.jsx(dt.StrictMode,{children:L.jsx(DS,{store:cR,children:L.jsx(LC,{basename:"/search-git-users/",children:L.jsx(aR,{})})})}));else throw new Error("Root element with ID 'root' was not found in the document. Ensure there is a corresponding HTML element with the ID 'root' in your HTML file.");
-//# sourceMappingURL=index-drpirLh0.js.map
+`,lR=()=>L.jsxs(iR,{children:[L.jsx(oR,{children:"Ошибка 404"}),L.jsx(sR,{children:"Упс, кажется такой страницы не существует....."})]}),uR=()=>L.jsxs(TC,{children:[L.jsx(ja,{path:"/",element:L.jsx(rR,{})}),L.jsx(ja,{path:"/*",element:L.jsx(lR,{})})]}),aR=()=>L.jsxs(L.Fragment,{children:[L.jsx(Gw,{}),L.jsx(uR,{})]}),cR=Rx({reducer:{sort:VP,pagination:KP,[us.reducerPath]:us.reducer},middleware:e=>e().concat(us.middleware)}),gh=document.getElementById("root");if(gh)$v(gh).render(L.jsx(dt.StrictMode,{children:L.jsx(DS,{store:cR,children:L.jsx(LC,{basename:"/search-git-users",children:L.jsx(aR,{})})})}));else throw new Error("Root element with ID 'root' was not found in the document. Ensure there is a corresponding HTML element with the ID 'root' in your HTML file.");
+//# sourceMappingURL=index-x_yYb3Gz.js.map
