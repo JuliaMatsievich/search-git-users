@@ -4,10 +4,11 @@ interface ISearchProps {
   searchUser: string;
   setSearchUser: React.Dispatch<React.SetStateAction<string>>;
   setQuerySearh: React.Dispatch<React.SetStateAction<string>>;
+  isLoading: boolean;
 }
 
 export const Search: React.FC<ISearchProps> = (props) => {
-  const { searchUser, setSearchUser, setQuerySearh } = props;
+  const { searchUser, setSearchUser, setQuerySearh, isLoading } = props;
 
   const handleClick = () => {
     setQuerySearh(searchUser);
@@ -21,7 +22,9 @@ export const Search: React.FC<ISearchProps> = (props) => {
           onChange={(e) => setSearchUser(e.target.value)}
           placeholder="Поиск"
         />
-        <S.Button onClick={handleClick}>Найти</S.Button>
+        <S.Button disabled={isLoading} onClick={handleClick}>
+          Найти
+        </S.Button>
       </S.SearchContainer>
     </>
   );

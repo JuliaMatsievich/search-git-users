@@ -3,7 +3,7 @@ import {
   buttonColor,
   centralContainer,
 } from '../../styles/commonStyles.styles';
-import { $mainColor } from '../../styles/variables';
+import { $buttonColorDisabled, $mainColor } from '../../styles/variables';
 
 export const SearchContainer = styled.div`
   ${centralContainer}
@@ -36,4 +36,9 @@ export const SearchInput = styled.input`
 
 export const Button = styled.button`
   ${buttonColor}
+
+  &:disabled {
+    background-color: ${$buttonColorDisabled};
+    cursor: none;
+  }
 `;
